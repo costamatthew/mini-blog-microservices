@@ -1,11 +1,22 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { randomBytes } = require('crypto')
+const cors = require('cors')
 
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 
-const posts = {}
+const posts = {
+    "70e494b1": {
+        id: "70e494b1",
+        title: "Firts Post"
+    },
+    "054f2d11": {
+        id: "054f2d11",
+        title: "Firts Post"
+    }
+}
 
 app.get('/posts', (req, res) => {
     res.send(posts)
