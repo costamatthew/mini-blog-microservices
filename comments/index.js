@@ -36,6 +36,12 @@ app.post('/posts/:id/comments', async (req, res) => {
   res.status(201).send(comments)
 })
 
+app.post('/events', (req, res) => {
+  console.log('Recieved events', req.body.type)
+
+  res.send({})
+})
+
 app.listen(4001, () => {
   console.log('listening on http://localhost:4001')
 })

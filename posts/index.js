@@ -13,10 +13,10 @@ const posts = {
     id: '70e494b1',
     title: 'Firts Post',
   },
-  '054f2d11': {
-    id: '054f2d11',
-    title: 'Firts Post',
-  },
+  // '054f2d11': {
+  //   id: '054f2d11',
+  //   title: 'Firts Post',
+  // },
 }
 
 app.get('/posts', (req, res) => {
@@ -41,6 +41,12 @@ app.post('/posts', async (req, res) => {
   })
 
   res.status(201).send(posts[id])
+})
+
+app.post('/events', (req, res) => {
+  console.log('Recieved events', req.body.type)
+
+  res.send({})
 })
 
 app.listen(4000, () => {
